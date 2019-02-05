@@ -1,8 +1,1 @@
-rootProject.name = 'spring-boot-starter-breuninger'
-
-include "jobs"
-include "togglz"
-include "datadog"
-include "validation"
-include "example-admin"
-include "example-app"
+rootProject.name = 'web-apis'
