@@ -16,7 +16,7 @@ val libraryVersions = mapOf(
 
   "hibernate-validator" to "6.0.14.Final",
 
-  "spring" to "5.1.4.RELEASE"
+  "spring" to "5.1.5.RELEASE"
 )
 
 val libraries = mapOf(
