@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.core.publisher.toFlux
 import javax.validation.Valid
@@ -19,9 +18,7 @@ class ProductsController {
   val products = ArrayList<Product>()
 
   @GetMapping(produces = [APPLICATION_PRODUCT_JSON_VALUE])
-  fun getProducts(): Flux<Product> {
-    return products.toFlux()
-  }
+  fun getProducts() = products.toFlux()
 
   @PostMapping(
     consumes = [APPLICATION_PRODUCT_JSON_VALUE],
@@ -30,5 +27,4 @@ class ProductsController {
     products.add(product)
     return Mono.just(product)
   }
-
 }
