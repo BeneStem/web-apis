@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Mono
 import javax.validation.Valid
@@ -16,7 +17,8 @@ import javax.validation.Valid
 class ProductsRestController(val productRepository: ProductRepository) {
 
   @GetMapping(produces = [APPLICATION_PRODUCT_JSON_VALUE])
-  fun getProducts() = productRepository.findAll()
+  fun getProducts(@RequestParam(required = false) vegan: Boolean?, @RequestParam(required = false) contains: String?) =
+    productRepository.find(vegan, contains)
 
   @PostMapping(
     consumes = [APPLICATION_PRODUCT_JSON_VALUE],

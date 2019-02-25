@@ -13,7 +13,7 @@ class ProductsHtmlController(val productRepository: ProductRepository) {
 
   @GetMapping
   fun getProducts(model: Model): String {
-    model.addAttribute("productsAttr", ReactiveDataDriverContextVariable(productRepository.findAll()))
+    model.addAttribute("products", ReactiveDataDriverContextVariable(productRepository.findAll()))
     model.addAttribute("title", "Products")
     return "productsOverview"
   }

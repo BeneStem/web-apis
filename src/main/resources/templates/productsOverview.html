@@ -7,11 +7,20 @@
 </head>
 <body>
 <!--/*@thymesVar id="title" type="java.lang.String"*/-->
-<!--/*@thymesVar id="productsAttr" type="reactor.core.publisher.Flux<de.dhbw.webapis.domain.Product>"*/-->
+<!--/*@thymesVar id="products" type="reactor.core.publisher.Flux<de.dhbw.webapis.domain.Product>"*/-->
+<!--/*@thymesVar id="product" type="de.dhbw.webapis.domain.Product"*/-->
 <h1 th:text="${title}"></h1>
 <p>Hier findes du tolle Produkte</p>
-<ul>
-  <li th:each="product : ${productsAttr}" th:text="${product.name}"></li>
+<label for="contains">Name
+  <input id="contains" placeholder="Search" type="text">
+</label>
+<label for="vegan">
+  <input id="vegan" type="checkbox" value="true"> Vegan
+</label>
+<input id="search" type="button" value="Search">
+<ul id="result">
+  <li th:each="product : ${products}" th:text="|${product.name} vegan: ${product.vegan}|"></li>
 </ul>
+<script src="../filterProducts.js"></script>
 </body>
 </html>
