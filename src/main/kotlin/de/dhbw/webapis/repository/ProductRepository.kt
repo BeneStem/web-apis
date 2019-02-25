@@ -18,10 +18,10 @@ class ProductRepository(val reactiveMongoTemplate: ReactiveMongoTemplate) {
   fun find(vegan: Boolean?, contains: String?): Flux<Product> {
     val query = Query()
     if (vegan != null) {
-      query.addCriteria(Criteria.where("vegan").`is`(vegan))
+      query.addCriteria(Criteria.where(Product::vegan.name).`is`(vegan))
     }
     if (contains != null) {
-      query.addCriteria(Criteria.where("name").regex(".*$contains.*"))
+      query.addCriteria(Criteria.where(Product::name.name).regex(".*$contains.*"))
     }
     return reactiveMongoTemplate.find(query)
   }
