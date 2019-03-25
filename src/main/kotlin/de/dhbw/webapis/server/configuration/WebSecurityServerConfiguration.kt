@@ -11,7 +11,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain
 
 @Configuration
 @EnableWebFluxSecurity
-class WebSecurityConfiguration {
+class WebSecurityServerConfiguration {
 
   @Bean
   fun userDetailsService(): MapReactiveUserDetailsService {

@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 @Repository
-class ProductRepository(val reactiveMongoTemplate: ReactiveMongoTemplate) {
+class ProductServerRepository(val reactiveMongoTemplate: ReactiveMongoTemplate) {
 
   fun findAll() = reactiveMongoTemplate.findAll<Product>()
 

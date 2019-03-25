@@ -9,7 +9,7 @@ import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable
 
 @Controller
 @RequestMapping("/products")
-class ProductsHtmlController(val productClientRepository: ProductClientRepository) {
+class ProductsClientHtmlController(val productClientRepository: ProductClientRepository) {
 
   @GetMapping
   fun getProducts(model: Model): String {
