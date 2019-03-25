@@ -8,6 +8,8 @@ import org.springframework.security.config.web.server.ServerHttpSecurity
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.web.server.SecurityWebFilterChain
+import org.springframework.web.reactive.config.CorsRegistry
+import org.springframework.web.reactive.config.WebFluxConfigurer
 
 @Configuration
 @EnableWebFluxSecurity
@@ -27,7 +29,6 @@ class WebSecurityServerConfiguration {
   @Bean
   fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
     return http
-      .cors().disable()
       .csrf().disable()
       .authorizeExchange()
       .pathMatchers(HttpMethod.POST, "/**").hasRole("ADMIN_ROLE")
@@ -36,5 +37,14 @@ class WebSecurityServerConfiguration {
       .httpBasic()
       .and()
       .build()
+  }
+}
+
+@Configuration
+class CorsConfig : WebFluxConfigurer {
+
+  override fun addCorsMappings(registry: CorsRegistry) {
+    registry.addMapping("/**")
+      .allowedMethods("*")
   }
 }

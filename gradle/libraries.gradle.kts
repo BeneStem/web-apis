@@ -16,6 +16,8 @@ val libraryVersions = mapOf(
 
   "hibernate-validator" to "6.0.14.Final",
 
+  "resilience4j-spring-boot" to "0.13.2",
+
   "spring" to "5.1.5.RELEASE"
 )
 
@@ -40,6 +42,8 @@ val libraries = mapOf(
   "reactor-kafka" to "io.projectreactor.kafka:reactor-kafka:${libraryVersions["reactor-kafka"]}",
 
   "hibernate-validator" to "org.hibernate:hibernate-validator:${libraryVersions["hibernate-validator"]}",
+
+  "resilience4j-spring-boot" to "io.github.resilience4j:resilience4j-spring-boot2:${libraryVersions["resilience4j-spring-boot"]}",
 
   "spring-boot-devtools" to "org.springframework.boot:spring-boot-devtools:${coreVersions["spring-boot"]}",
   "spring-context-indexer" to "org.springframework:spring-context-indexer:${libraryVersions["spring"]}",
