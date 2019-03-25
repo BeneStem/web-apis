@@ -1,6 +1,6 @@
 package de.dhbw.webapis.server.repository
 
-import de.dhbw.webapis.server.domain.Product
+import de.dhbw.webapis.common.domain.Product
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate
 import org.springframework.data.mongodb.core.find
 import org.springframework.data.mongodb.core.findAll

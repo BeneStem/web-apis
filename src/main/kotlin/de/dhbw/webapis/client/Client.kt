@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class Client
 
 fun main(vararg args: String) {
+  System.setProperty("server.port", "8081")
   runApplication<Client>(*args)
 }

@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class Server
 
 fun main(vararg args: String) {
+  System.setProperty("server.port", "8080")
   runApplication<Server>(*args)
 }

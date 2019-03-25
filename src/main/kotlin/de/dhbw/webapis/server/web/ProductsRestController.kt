@@ -1,7 +1,7 @@
 package de.dhbw.webapis.server.web
 
-import de.dhbw.webapis.server.domain.Product
-import de.dhbw.webapis.server.domain.Product.Companion.APPLICATION_PRODUCT_JSON_VALUE
+import de.dhbw.webapis.common.domain.Product
+import de.dhbw.webapis.common.domain.Product.Companion.APPLICATION_PRODUCT_JSON_VALUE
 import de.dhbw.webapis.server.repository.ProductRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping

@@ -14,7 +14,7 @@ class ProductFilter {
   }
 
   static findProducts(vegan, contains) {
-    return fetch(`../products?vegan=${vegan.checked}&contains=${contains.value}`, {
+    return fetch(`http://localhost:8080/products?vegan=${vegan.checked}&contains=${contains.value}`, {
       method: 'get',
       headers: {
         Accept: 'application/de.dhbw.product+json'

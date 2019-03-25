@@ -1,6 +1,6 @@
-package de.dhbw.webapis.server.web
+package de.dhbw.webapis.client.web
 
-import de.dhbw.webapis.server.repository.ProductRepository
+import de.dhbw.webapis.client.repository.ProductClientRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -9,11 +9,11 @@ import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable
 
 @Controller
 @RequestMapping("/products")
-class ProductsHtmlController(val productRepository: ProductRepository) {
+class ProductsHtmlController(val productClientRepository: ProductClientRepository) {
 
   @GetMapping
   fun getProducts(model: Model): String {
-    model.addAttribute("products", ReactiveDataDriverContextVariable(productRepository.findAll()))
+    model.addAttribute("products", ReactiveDataDriverContextVariable(productClientRepository.findAll()))
     return "productsOverview"
   }
 }

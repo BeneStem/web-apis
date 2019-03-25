@@ -27,6 +27,7 @@ class WebSecurityConfiguration {
   @Bean
   fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
     return http
+      .cors().disable()
       .csrf().disable()
       .authorizeExchange()
       .pathMatchers(HttpMethod.POST, "/**").hasRole("ADMIN_ROLE")
