@@ -26,6 +26,7 @@ val libraries = mapOf(
 
   "spring-boot-starter-actuator" to "org.springframework.boot:spring-boot-starter-actuator:${coreVersions["spring-boot"]}",
   "spring-boot-starter-webflux" to "org.springframework.boot:spring-boot-starter-webflux:${coreVersions["spring-boot"]}",
+  "spring-boot-starter-security" to "org.springframework.boot:spring-boot-starter-security:${coreVersions["spring-boot"]}",
   "spring-boot-starter-thymeleaf" to "org.springframework.boot:spring-boot-starter-thymeleaf:${coreVersions["spring-boot"]}",
   "spring-boot-starter-data-mongodb-reactive" to "org.springframework.boot:spring-boot-starter-data-mongodb-reactive:${coreVersions["spring-boot"]}",
 

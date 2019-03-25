@@ -1,4 +1,4 @@
-package de.dhbw.webapis.domain
+package de.dhbw.webapis.server.domain
 
 import org.hibernate.validator.constraints.Length
 import org.springframework.data.annotation.Id

@@ -41,6 +41,7 @@ dependencies {
   "compile"(libraries["jackson-module-kotlin"] as String)
 
   "compile"(libraries["spring-boot-starter-webflux"] as String)
+  "compile"(libraries["spring-boot-starter-security"] as String)
   "compile"(libraries["spring-boot-starter-thymeleaf"] as String)
   "compile"(libraries["spring-boot-starter-data-mongodb-reactive"] as String)
 
