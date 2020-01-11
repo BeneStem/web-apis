@@ -1,0 +1,10 @@
+POST http://localhost:8080/products
+Content-Type: application/de.dhbw.product+json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+
+{
+  "name": "Apfel",
+  "vegan": true
+}
+
+###
