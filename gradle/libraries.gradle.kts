@@ -4,7 +4,7 @@ project.apply {
 val coreVersions = extra["coreVersions"] as Map<*, *>
 
 val libraryVersions = mapOf(
-  "jackson-module-kotlin" to "2.9.8",
+  "jackson-module-kotlin" to "2.10.2",
 
   "spring-boot-admin-starter" to "2.1.2",
 
@@ -12,13 +12,13 @@ val libraryVersions = mapOf(
 
   "togglz" to "2.6.1.Final",
 
-  "reactor-kafka" to "1.1.0.RELEASE",
+  "reactor-kafka" to "1.2.1.RELEASE",
 
-  "hibernate-validator" to "6.0.14.Final",
+  "hibernate-validator" to "6.1.0.Final",
 
-  "resilience4j-spring-boot" to "0.13.2",
+  "resilience4j-spring-boot2" to "1.2.0",
 
-  "spring" to "5.1.5.RELEASE"
+  "spring" to "5.2.2.RELEASE"
 )
 
 val libraries = mapOf(
