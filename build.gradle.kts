@@ -27,8 +27,8 @@ buildscript {
 }
 
 configure<JavaPluginConvention> {
-  sourceCompatibility = JavaVersion.VERSION_13
-  targetCompatibility = JavaVersion.VERSION_13
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 repositories {
@@ -39,12 +39,13 @@ dependencies {
   "compile"(libraries["kotlin-stdlib-jre8"] as String)
   "compile"(libraries["kotlin-reflect"] as String)
   "compile"(libraries["jackson-module-kotlin"] as String)
+  "compile"(libraries["reactor-kotlin-extensions"] as String)
 
   "compile"(libraries["spring-boot-starter-webflux"] as String)
   "compile"(libraries["spring-boot-starter-thymeleaf"] as String)
-  "compile"(libraries["spring-boot-starter-security"] as String)
+//  "compile"(libraries["spring-boot-starter-security"] as String)
   "compile"(libraries["spring-boot-starter-actuator"] as String)
-  "compile"(libraries["spring-boot-starter-data-mongodb-reactive"] as String)
+//  "compile"(libraries["spring-boot-starter-data-mongodb-reactive"] as String)
 
   "compile"(libraries["spring-boot-devtools"] as String)
   "compileOnly"(libraries["spring-context-indexer"] as String)
@@ -54,7 +55,7 @@ tasks {
   withType<KotlinCompile> {
     kotlinOptions {
       freeCompilerArgs = listOf("-Xjsr305=strict")
-      jvmTarget = JavaVersion.VERSION_12.toString()
+      jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
   }
 

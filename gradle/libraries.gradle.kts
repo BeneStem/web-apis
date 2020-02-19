@@ -5,6 +5,7 @@ val coreVersions = extra["coreVersions"] as Map<*, *>
 
 val libraryVersions = mapOf(
   "jackson-module-kotlin" to "2.10.2",
+  "reactor-kotlin-extensions" to "1.0.2.RELEASE",
 
   "spring-boot-admin-starter" to "2.1.2",
 
@@ -25,6 +26,7 @@ val libraries = mapOf(
   "kotlin-stdlib-jre8" to "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${coreVersions["kotlin"]}",
   "kotlin-reflect" to "org.jetbrains.kotlin:kotlin-reflect:${coreVersions["kotlin"]}",
   "jackson-module-kotlin" to "com.fasterxml.jackson.module:jackson-module-kotlin:${libraryVersions["jackson-module-kotlin"]}",
+  "reactor-kotlin-extensions" to "io.projectreactor.kotlin:reactor-kotlin-extensions:${libraryVersions["reactor-kotlin-extensions"]}",
 
   "spring-boot-starter-actuator" to "org.springframework.boot:spring-boot-starter-actuator:${coreVersions["spring-boot"]}",
   "spring-boot-starter-webflux" to "org.springframework.boot:spring-boot-starter-webflux:${coreVersions["spring-boot"]}",

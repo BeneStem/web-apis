@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8081/products
+Content-Type: application/json
+
+{
+  "name": "Banane",
+  "price": 3
+}
+
+###
+
+POST http://127.0.0.1:8081/products
+Content-Type: application/json
+
+{
+  "name": "Apfel",
+  "price": 7
+}
+
+###
