@@ -1,0 +1,15 @@
+GET http://localhost:8081/products
+
+###
+
+GET http://localhost:8081/products?search=Apfel&cheaperThan=4
+
+###
+
+GET http://localhost:8081/products?search=Apfel
+
+###
+
+GET http://localhost:8081/products?cheaperThan=4
+
+###

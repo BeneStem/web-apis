@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toFlux
@@ -16,10 +17,27 @@ class ProductsServerRestController {
     val products = mutableListOf(Product("Schokolade", 6))
 
     @GetMapping
-    fun getProducts() = products.toFlux()
+    fun getProducts(@RequestParam(required = false) search: String?,
+                    @RequestParam(required = false) cheaperThan: Int?) =
+            if (search != null && cheaperThan == null) {
+                products.distinct().filter {
+                    it.name.contains(search, true)
+                }.toFlux()
+            } else if (search == null && cheaperThan != null) {
+                products.distinct().filter {
+                    it.price < cheaperThan
+                }.toFlux()
+            } else if (search != null && cheaperThan != null) {
+                products.distinct().filter {
+                    it.name.contains(search, true) && it.price < cheaperThan
+                }.toFlux()
+            } else {
+                products.distinct().toFlux()
+            }
 
     @PostMapping
-    fun addProduct(@RequestBody product: Mono<Product>) = product.doOnNext {
-        products.add(it)
-    }
+    fun addProduct(@RequestBody product: Mono<Product>) =
+            product.doOnNext {
+                products.add(it)
+            }
 }
