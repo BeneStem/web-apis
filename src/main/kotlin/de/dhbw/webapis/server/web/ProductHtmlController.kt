@@ -7,6 +7,7 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
+import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable
 
 @Controller
 @RequestMapping("/products")
@@ -16,8 +17,7 @@ class ProductHtmlController(val productService: ProductService) {
     fun find(@RequestParam(required = false) search: String?,
              @RequestParam(required = false) cheaperThan: Int?,
              model: Model): String {
-        model.addAttribute("products",
-                productService.find(search, cheaperThan))
+        model.addAttribute("products", ReactiveDataDriverContextVariable(productService.find(search, cheaperThan)))
         return "products"
     }
 }

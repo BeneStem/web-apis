@@ -1,15 +1,4 @@
-PUT http://localhost:8081/products/Schokolade
-Content-Type: application/de.dhbw.product+json
-Accept: application/de.dhbw.product+json
-
-{
-  "name": "Schokolade",
-  "price": 3
-}
-
-###
-
-PUT http://localhost:8081/products/Banane
+PUT http://localhost:8081/products/5e4f014c2651057dcf5b3eaf
 Content-Type: application/de.dhbw.product+json
 Accept: application/de.dhbw.product+json
 

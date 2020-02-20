@@ -17,6 +17,7 @@ data class Product(
         @field:Range(min = 1, max = 10)
         val price: Int
 ) {
+
         companion object {
                 const val APPLICATION_PRODUCT_JSON_VALUE = "application/de.dhbw.product+json"
         }
