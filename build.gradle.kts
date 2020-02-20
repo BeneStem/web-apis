@@ -45,7 +45,7 @@ dependencies {
   "compile"(libraries["spring-boot-starter-thymeleaf"] as String)
 //  "compile"(libraries["spring-boot-starter-security"] as String)
   "compile"(libraries["spring-boot-starter-actuator"] as String)
-//  "compile"(libraries["spring-boot-starter-data-mongodb-reactive"] as String)
+  "compile"(libraries["spring-boot-starter-data-mongodb-reactive"] as String)
 
   "compile"(libraries["spring-boot-devtools"] as String)
   "compileOnly"(libraries["spring-context-indexer"] as String)

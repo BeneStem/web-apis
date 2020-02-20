@@ -1,14 +1,23 @@
 package de.dhbw.webapis.server.web
 
+import de.dhbw.webapis.server.service.ProductService
 import org.springframework.http.MediaType.TEXT_HTML_VALUE
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 @RequestMapping("/products")
-class ProductHtmlController {
+class ProductHtmlController(val productService: ProductService) {
 
     @GetMapping(produces = [TEXT_HTML_VALUE])
-    fun getProducts() = "products"
+    fun find(@RequestParam(required = false) search: String?,
+             @RequestParam(required = false) cheaperThan: Int?,
+             model: Model): String {
+        model.addAttribute("products",
+                productService.find(search, cheaperThan))
+        return "products"
+    }
 }

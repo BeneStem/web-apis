@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
 </head>
 <body>
+<!--/*@thymesVar id="products" type="java.util.List<de.dhbw.webapis.common.domain.Product>"*/-->
+<!--/*@thymesVar id="product" type="de.dhbw.webapis.common.domain.Product"*/-->
 <h1>Products</h1>
+<p th:each="product : ${products}" th:text="${product.name}"></p>
 </body>
 </html>
