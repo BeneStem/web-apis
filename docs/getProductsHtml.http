@@ -1,3 +1,4 @@
-GET http://localhost:8081/p
+GET http://localhost:8081/products
+Accept: text/html
 
 ###

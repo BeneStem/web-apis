@@ -1,5 +1,6 @@
 POST http://localhost:8081/products
-Content-Type: application/json
+Content-Type: application/de.dhbw.product+json
+Accept: application/de.dhbw.product+json
 
 {
   "name": "Banane",
@@ -9,7 +10,8 @@ Content-Type: application/json
 ###
 
 POST http://localhost:8081/products
-Content-Type: application/json
+Content-Type: application/de.dhbw.product+json
+Accept: application/de.dhbw.product+json
 
 {
   "name": "Apfel",
@@ -19,11 +21,12 @@ Content-Type: application/json
 ###
 
 POST http://localhost:8081/products
-Content-Type: application/json
+Content-Type: application/de.dhbw.product+json
+Accept: application/de.dhbw.product+json
 
 {
-  "name": "Apfel",
-  "price": 1
+  "name": "",
+  "price": 0
 }
 
 ###
