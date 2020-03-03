@@ -19,7 +19,7 @@ val libraryVersions = mapOf(
 
   "resilience4j-spring-boot2" to "1.2.0",
 
-  "spring" to "5.2.3.RELEASE"
+  "spring" to "5.2.4.RELEASE"
 )
 
 val libraries = mapOf(
