@@ -1,6 +1,7 @@
 POST http://localhost:8081/products
 Content-Type: application/de.dhbw.product+json
 Accept: application/de.dhbw.product+json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
   "name": "Banane",
@@ -12,6 +13,7 @@ Accept: application/de.dhbw.product+json
 POST http://localhost:8081/products
 Content-Type: application/de.dhbw.product+json
 Accept: application/de.dhbw.product+json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
   "name": "Apfel",
@@ -23,6 +25,7 @@ Accept: application/de.dhbw.product+json
 POST http://localhost:8081/products
 Content-Type: application/de.dhbw.product+json
 Accept: application/de.dhbw.product+json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
   "name": "",

@@ -1,7 +1,6 @@
-package de.dhbw.webapis.server.web
+package de.dhbw.webapis.client.web
 
-import de.dhbw.webapis.server.service.ProductService
-import org.springframework.http.MediaType.TEXT_HTML_VALUE
+import de.dhbw.webapis.client.service.ProductService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -13,7 +12,7 @@ import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable
 @RequestMapping("/products")
 class ProductHtmlController(val productService: ProductService) {
 
-    @GetMapping(produces = [TEXT_HTML_VALUE])
+    @GetMapping
     fun find(@RequestParam(required = false) search: String?,
              @RequestParam(required = false) cheaperThan: Int?,
              model: Model): String {

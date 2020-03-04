@@ -5,6 +5,7 @@ import de.dhbw.webapis.common.domain.Product.Companion.APPLICATION_PRODUCT_JSON_
 import de.dhbw.webapis.server.service.ProductService
 import org.springframework.http.HttpStatus.CREATED
 import org.springframework.http.HttpStatus.NO_CONTENT
+import org.springframework.http.MediaType.TEXT_EVENT_STREAM_VALUE
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -22,7 +23,7 @@ import javax.validation.Valid
 @RequestMapping("/products")
 class ProductRestController(val productService: ProductService) {
 
-    @GetMapping(produces = [APPLICATION_PRODUCT_JSON_VALUE])
+    @GetMapping(produces = [APPLICATION_PRODUCT_JSON_VALUE, TEXT_EVENT_STREAM_VALUE])
     fun find(@RequestParam(required = false) search: String?,
              @RequestParam(required = false) cheaperThan: Int?) =
             productService.find(search, cheaperThan)

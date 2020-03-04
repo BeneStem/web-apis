@@ -1,6 +1,7 @@
 PUT http://localhost:8081/products/5e4f014c2651057dcf5b3eaf
 Content-Type: application/de.dhbw.product+json
 Accept: application/de.dhbw.product+json
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
 
 {
   "name": "Schokolade",
