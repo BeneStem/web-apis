@@ -11,20 +11,7 @@ import reactor.core.publisher.Flux
 @Repository
 class ProductRepository {
 
-    private val webClient = WebClient.create("http://localhost:8081")
-
     fun find(search: String?, cheaperThan: Int?): Flux<Product> {
-        val uri = UriComponentsBuilder.fromPath("/products")
-        if (search != null) {
-            uri.queryParam("search", search)
-        }
-        if (cheaperThan != null) {
-            uri.queryParam("cheaperThan", cheaperThan)
-        }
-        return webClient.get()
-                .uri(uri.build().toUriString())
-                .accept(TEXT_EVENT_STREAM)
-                .retrieve()
-                .bodyToFlux()
+       TODO()
     }
 }
